@@ -1,0 +1,22 @@
+### User registration end point
+POST http://localhost:5001/api/user/register
+Content-Type: application/json
+
+{
+  "name":"Siva Ganesh",
+  "email":"test32@mail.com",
+  "password":"sivaganeshrk"
+}
+
+###User login end point
+POST http://localhost:5001/api/user/auth
+Content-Type: application/json
+
+{
+  "email":"test32@mail.com",
+  "password":"sivaganeshrk"
+}
+
+### Get the logged in user data end point
+GET http://localhost:5001/api/user/auth
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YmMyY2NhODdiNTc0ZjJjMzk1ZTI4In0sImlhdCI6MTYwNDA0Mzc3NCwiZXhwIjoxNjA2MTYzNzc0fQ.So7JLwzbRu1l7XrmxbRTY3r0TTMHHwUV3vK3db5slMI

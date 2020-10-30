@@ -4,6 +4,7 @@ const User = require("../../models/user");
 const { check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const jwtgen = require("../../helper/jwtgen");
 
 // @route   POST /api/user/register
 // @desc    New User Registration
@@ -50,22 +51,22 @@ router.post(
       }
 
       await user.save();
+      jwtgen(req, res, user.id);
+      // const payload = {
+      //   user: {
+      //     id: user.id,
+      //   },
+      // };
 
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
-
-      jwt.sign(
-        payload,
-        config.get("jwtSecret"),
-        { expiresIn: 2120000 },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
-        }
-      );
+      // jwt.sign(
+      //   payload,
+      //   config.get("jwtSecret"),
+      //   { expiresIn: 2120000 },
+      //   (err, token) => {
+      //     if (err) throw err;
+      //     res.json({ token });
+      //   }
+      // );
     } catch (err) {
       console.error("[User register.js]", err.message);
       return res.status(500).json({ msg: "Internal Server Error" });
