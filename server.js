@@ -10,6 +10,8 @@ app.use("/api/user/register", require("./routes/User/register"));
 app.use("/api/user/auth", require("./routes/User/auth"));
 app.use("/api/user/referral", require("./routes/User/referralcode"));
 
+app.use("/api/admin/register", require("./routes/Admin/register"));
+app.use("/api/admin/auth", require("./routes/Admin/auth"));
 const PORT = process.env.PORT || 5001;
 
 app.use(express.static("client/build"));

@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const config = require("config");
 
-const jwtgen = (req, res, user_id) => {
+module.exports = (req, res, user_id) => {
   try {
     const payload = {
       user: {
@@ -23,5 +23,3 @@ const jwtgen = (req, res, user_id) => {
     res.status(500).json({ msg: "Internal Server Error" });
   }
 };
-
-module.exports = jwtgen;
