@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "name":"Siva Ganesh",
-  "email":"test32@mail.com",
+  "email":"testregister@mail.com",
   "password":"sivaganeshrk"
 }
 
@@ -20,3 +20,17 @@ Content-Type: application/json
 ### Get the logged in user data end point
 GET http://localhost:5001/api/user/auth
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YmMyY2NhODdiNTc0ZjJjMzk1ZTI4In0sImlhdCI6MTYwNDA0Mzc3NCwiZXhwIjoxNjA2MTYzNzc0fQ.So7JLwzbRu1l7XrmxbRTY3r0TTMHHwUV3vK3db5slMI
+
+### Verifing referral code end point
+GET http://localhost:5001/api/user/referral/1b697eac4337
+
+####
+POST http://localhost:5001/api/user/referral/b78294ee65d0
+Content-Type: application/json
+
+
+{
+  "name":"Siva Ganesh",
+  "email":"test1234@mail.com",
+  "password":"sivaganeshrk"
+}

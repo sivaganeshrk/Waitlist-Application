@@ -1,11 +1,6 @@
 const router = require("express").Router();
-const bcrypt = require("bcryptjs");
-const User = require("../../models/user");
 const { check, validationResult } = require("express-validator");
-const jwt = require("jsonwebtoken");
-const config = require("config");
-const jwtgen = require("../../helper/jwtgen");
-
+const register = require("../../helper/register");
 // @route   POST /api/user/register
 // @desc    New User Registration
 // @access  Public
@@ -25,33 +20,8 @@ router.post(
     }
 
     const { name, email, password } = req.body;
-    const waitno = 99;
-
     try {
-      let user = await User.findOne({ email });
-
-      if (user) {
-        return res.status(400).json({ msg: "User already exist" });
-      }
-
-      user = new User({
-        name,
-        email,
-        password,
-        waitno,
-      });
-
-      const salt = await bcrypt.genSalt(10);
-      user.password = await bcrypt.hash(password, salt);
-
-      var totaluser = await User.find({});
-
-      if (totaluser != 0) {
-        user.waitno = waitno + totaluser.length;
-      }
-
-      await user.save();
-      jwtgen(req, res, user.id);
+      register(req, res, name, email, password);
       // const payload = {
       //   user: {
       //     id: user.id,

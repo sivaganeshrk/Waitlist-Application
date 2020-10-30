@@ -8,6 +8,7 @@ app.use(express.json({ extended: false }));
 
 app.use("/api/user/register", require("./routes/User/register"));
 app.use("/api/user/auth", require("./routes/User/auth"));
+app.use("/api/user/referral", require("./routes/User/referralcode"));
 
 const PORT = process.env.PORT || 5001;
 

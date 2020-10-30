@@ -16,6 +16,9 @@ const UserSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  referralcode: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("user", UserSchema);
