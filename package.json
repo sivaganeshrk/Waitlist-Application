@@ -1,0 +1,29 @@
+{
+  "name": "waitlist_application",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivaganeshrk/Waitlist-Application.git"
+  },
+  "author": "Siva Ganesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sivaganeshrk/Waitlist-Application/issues"
+  },
+  "homepage": "https://github.com/sivaganeshrk/Waitlist-Application#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11",
+    "nodemailer": "^6.4.14"
+  }
+}
