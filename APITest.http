@@ -19,19 +19,19 @@ Content-Type: application/json
 
 ### Get the logged in user data end point
 GET http://localhost:5001/api/user/auth
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5Y2YyMTA1MjEwNTQ1YWEwYzFiZjcwIn0sImlhdCI6MTYwNDEyMTEwNCwiZXhwIjoxNjA2MjQxMTA0fQ.MrsM0sEE8CL-bEtwbcQ28GdV-UIHYeFqwNmqYmCTfUg
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YzIyNzU5N2RlYzAwNTFjMWVkMjg5In0sImlhdCI6MTYwNDE1NDY3NCwiZXhwIjoxNjA2Mjc0Njc0fQ.Yp4_JsUzRFwxHH2sR3c_p94KHONHaBaLBQWF0VQcr0M
 
 ### Verifing referral code end point
-GET http://localhost:5001/api/user/referral/1b697eac4337
+GET http://localhost:5001/api/user/referral/519f74281a14
 
 #### User register using referal code end point
-POST http://localhost:5001/api/user/referral/28d120c294e2
+POST http://localhost:5001/api/user/referral/sdfsdverg
 Content-Type: application/json
 
 
 {
   "name":"Siva Ganesh",
-  "email":"dsfdswss@mail.com",
+  "email":"sivaganesh@mail.com",
   "password":"sivaganeshrk"
 }
 

@@ -11,7 +11,7 @@ router.get("/:referral", async (req, res) => {
     const referralCode = await User.findOne({
       referralcode: req.params.referral,
     });
-    if (!referralCode) return res.status(400).json({ msg: "Invalid Code" });
+    if (!referralCode) return res.json({ msg: "Invalid Code" });
     res.json({ msg: "Valid code" });
   } catch (err) {
     console.error("[referralcode get] :", err.message);
@@ -24,8 +24,7 @@ router.post("/:referral", async (req, res) => {
     const referral_user = await User.findOne({
       referralcode: req.params.referral,
     }).select("-password");
-    if (!referral_user)
-      return res.status(400).json({ mag: "Invalid referral code" });
+    if (!referral_user) return res.json({ msg: "Invalid Code" });
 
     const { name, email, password } = req.body;
 
