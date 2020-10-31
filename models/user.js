@@ -19,6 +19,17 @@ const UserSchema = mongoose.Schema({
   referralcode: {
     type: String,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  couponcode: {
+    type: String,
+  },
+  mailflag: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("user", UserSchema);

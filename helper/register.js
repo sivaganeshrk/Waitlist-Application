@@ -6,6 +6,7 @@ const crypto = require("crypto");
 const register = async (req, res, name, email, password) => {
   const waitno = 99;
   const referralcode = crypto.randomBytes(6).toString("hex");
+  const couponcode = crypto.randomBytes(6).toString("hex");
   try {
     let user = await User.findOne({ email });
 
@@ -20,6 +21,7 @@ const register = async (req, res, name, email, password) => {
       password,
       waitno,
       referralcode,
+      couponcode,
     });
 
     const salt = await bcrypt.genSalt(10);

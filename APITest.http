@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "name":"Siva Ganesh",
-  "email":"testregister@mail.com",
+  "email":"sivadoog0808@gmail.com",
   "password":"sivaganeshrk"
 }
 
@@ -13,25 +13,25 @@ POST http://localhost:5001/api/user/auth
 Content-Type: application/json
 
 {
-  "email":"sivaganesh@mail.com",
-  "password":"sivaganeshrk"
+  "email":"sivadoog0808@gmail.com",
+  "password":"Sivaganeshrk"
 }
 
 ### Get the logged in user data end point
 GET http://localhost:5001/api/user/auth
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YmM1ZmE0YjQ5NmI0YmU4YzdkZGJjIn0sImlhdCI6MTYwNDA2OTE0NywiZXhwIjoxNjA2MTg5MTQ3fQ._-u6IC0aJsu6U4MReIe6vxSAiHqIAJ0nlAdLjfDNam8
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5Y2YyMTA1MjEwNTQ1YWEwYzFiZjcwIn0sImlhdCI6MTYwNDEyMTEwNCwiZXhwIjoxNjA2MjQxMTA0fQ.MrsM0sEE8CL-bEtwbcQ28GdV-UIHYeFqwNmqYmCTfUg
 
 ### Verifing referral code end point
 GET http://localhost:5001/api/user/referral/1b697eac4337
 
 #### User register using referal code end point
-POST http://localhost:5001/api/user/referral/b78294ee65d0
+POST http://localhost:5001/api/user/referral/28d120c294e2
 Content-Type: application/json
 
 
 {
   "name":"Siva Ganesh",
-  "email":"test1234@mail.com",
+  "email":"dsfdswss@mail.com",
   "password":"sivaganeshrk"
 }
 
@@ -57,3 +57,43 @@ Content-Type: application/json
 ### Get logged in admin details
 GET http://localhost:5001/api/admin/auth
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YzIyNzU5N2RlYzAwNTFjMWVkMjg5In0sImlhdCI6MTYwNDA2OTM3MCwiZXhwIjoxNjA2MTg5MzcwfQ.nk-tJFxtuqA-g1HpjHlOzV5j79hzZ9GuuERrvRLaV5Y
+
+### Get all user data from the database
+GET http://localhost:5001/api/admin/user
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YzIyNzU5N2RlYzAwNTFjMWVkMjg5In0sImlhdCI6MTYwNDA2OTM3MCwiZXhwIjoxNjA2MTg5MzcwfQ.nk-tJFxtuqA-g1HpjHlOzV5j79hzZ9GuuERrvRLaV5Y
+
+#### Create new user admin end point
+POST http://localhost:5001/api/admin/user
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YzIyNzU5N2RlYzAwNTFjMWVkMjg5In0sImlhdCI6MTYwNDA2OTM3MCwiZXhwIjoxNjA2MTg5MzcwfQ.nk-tJFxtuqA-g1HpjHlOzV5j79hzZ9GuuERrvRLaV5Y
+Content-Type: application/json
+
+{
+  "name":"Siva Ganesh",
+  "email":"dfdfsdfdsfghdfg@mail.com",
+  "password":"sivaganeshrk"
+}
+
+####
+PUT http://localhost:5001/api/admin/user/5f9cf2105210545aa0c1bf70
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YzIyNzU5N2RlYzAwNTFjMWVkMjg5In0sImlhdCI6MTYwNDA2OTM3MCwiZXhwIjoxNjA2MTg5MzcwfQ.nk-tJFxtuqA-g1HpjHlOzV5j79hzZ9GuuERrvRLaV5Y
+Content-Type: application/json
+
+{
+  "name":"Test update"
+}
+
+######
+DELETE  http://localhost:5001/api/admin/user/5f9cf2105210545aa0c1bf70
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY5YzIyNzU5N2RlYzAwNTFjMWVkMjg5In0sImlhdCI6MTYwNDA2OTM3MCwiZXhwIjoxNjA2MTg5MzcwfQ.nk-tJFxtuqA-g1HpjHlOzV5j79hzZ9GuuERrvRLaV5Y
+
+###
+GET http://localhost:5001/api/user/forgotpassword/sivadoog0808@gmail.com
+
+####
+POST http://localhost:5001/api/user/forgotpassword/sivadoog0808@gmail.com
+Content-Type: application/json
+
+{
+  "otp":"4929",
+  "password":"Sivaganeshrk"
+}

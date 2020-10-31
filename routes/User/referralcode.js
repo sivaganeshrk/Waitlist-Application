@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../../models/user");
 const register = require("../../helper/register");
+const sendmail = require("../../helper/mailsender");
 
 // @route   GET /api/referral/
 // @desc    check the referral code enter by the user
@@ -30,9 +31,20 @@ router.post("/:referral", async (req, res) => {
 
     const result = await register(req, res, name, email, password);
     const Updateuser = {};
-    if (result) {
+    if (result && referral_user.waitno !== 1) {
       Updateuser.waitno = referral_user.waitno - 1;
-
+      if (Updateuser.waitno == 1) {
+        Updateuser.mailflag = true;
+        const to = referral_user.email;
+        const subject = "Your Coupon Code";
+        const body = `<html>
+       <body>
+       <h4>Hai ${referral_user.name}</h4>
+       <p>Your Coupon code is :<b>${referral_user.couponcode}</b> </p>
+       </body>
+       <html>`;
+        sendmail(to, subject, body);
+      }
       await User.findByIdAndUpdate(
         referral_user._id,
         {
@@ -40,6 +52,27 @@ router.post("/:referral", async (req, res) => {
         },
         { new: true }
       );
+    } else {
+      if (!referral_user.mailflag) {
+        Updateuser.mailflag = true;
+        const to = referral_user.email;
+        const subject = "Your Coupon Code";
+        const body = `<html>
+       <body>
+       <h4>Hai ${referral_user.name}</h4>
+       <p>Your Coupon code is :<b>${referral_user.couponcode}</b> </p>
+       </body>
+       <html>`;
+        sendmail(to, subject, body);
+
+        await User.findByIdAndUpdate(
+          referral_user._id,
+          {
+            $set: Updateuser,
+          },
+          { new: true }
+        );
+      }
     }
   } catch (err) {
     console.error("[referralcode post]", err.message);

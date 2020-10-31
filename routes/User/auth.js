@@ -50,7 +50,9 @@ router.post(
 // @access  Private
 router.get("/", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const user = await User.findById(req.user.id).select(
+      "-password -couponcode"
+    );
     res.json(user);
   } catch (err) {
     console.error("[user auth get] :", err.message);
