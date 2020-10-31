@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/alertState";
 import AdminauthState from "./context/adminauth/AdminauthState";
+import UserdataState from "./context/Userdatabase.js/UserdataState";
 // Import Components
 import Error404 from "./components/pages/Error404";
 import Home from "./components/pages/Home";
@@ -21,6 +22,7 @@ import Referralregister from "./components/pages/referral";
 import Navbar from "./components/layout/Navbar";
 import AdminLogin from "./components/adminauth/Login";
 import AdminHome from "./components/pages/Adminhome";
+import Userdatabase from "./components/pages/UserDatabse";
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -34,30 +36,37 @@ const App = () => {
     <AuthState>
       <AlertState>
         <AdminauthState>
-          <Router>
-            <Fragment>
-              <Navbar />
-              <Switch>
-                <PrivateRoute exact path="/" component={Home} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <Route
-                  exact
-                  path="/forgotpassword"
-                  component={ForgotPassword}
-                />
-                <Route exact path="/referral" component={Referral} />
-                <Route
-                  exact
-                  path="/referral/:referralcode"
-                  component={Referralregister}
-                />
-                <AdminRoute exact path="/admin/" component={AdminHome} />
-                <Route exact path="/admin/login" component={AdminLogin} />
-                <Route exact path="/*" component={Error404} />
-              </Switch>
-            </Fragment>
-          </Router>
+          <UserdataState>
+            <Router>
+              <Fragment>
+                <Navbar />
+                <Switch>
+                  <PrivateRoute exact path="/" component={Home} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                  <Route
+                    exact
+                    path="/forgotpassword"
+                    component={ForgotPassword}
+                  />
+                  <Route exact path="/referral" component={Referral} />
+                  <Route
+                    exact
+                    path="/referral/:referralcode"
+                    component={Referralregister}
+                  />
+                  <AdminRoute exact path="/admin/" component={AdminHome} />
+                  <AdminRoute
+                    exact
+                    path="/admin/userdatabase"
+                    component={Userdatabase}
+                  />
+                  <Route exact path="/admin/login" component={AdminLogin} />
+                  <Route exact path="/*" component={Error404} />
+                </Switch>
+              </Fragment>
+            </Router>
+          </UserdataState>
         </AdminauthState>
       </AlertState>
     </AuthState>

@@ -21,3 +21,17 @@ export const ADMIN_LOGIN_FAIL = "ADMIN_LOGIN_FAIL";
 export const ADMIN_LOGOUT = "ADMIN_LOGOUT";
 export const ADMIN_CLEAR_ERRORS = "ADMIN_CLEAR_ERRORS";
 export const SET_ADMIN_AUTH_LOADING = "SET_ADMIN_AUTH_LOADING";
+
+// Userdatabase
+export const ADD_USER = "ADD_USER";
+export const GET_USER = "GET_USER";
+export const DELETE_USER = "DELETE_USER";
+export const UPDATE_USER = "UPDATE_USER";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const CLEAR_CURRENT_USER = "CLEAR_CURRENT_USER";
+export const FILTER_USER = "FILTER_USER";
+export const CLEAR_FILTER_USER = "CLEAR_FILTER_USER";
+export const CLEAR_USER = "CLEAR_USER";
+export const USER_ERROR = "USER_ERROR";
+export const CLEAR_ERRORS_USER = "CLEAR_ERRORS_USER";
+export const CLEAR_SUCCESS_USER = "CLEAR_SUCCESS_USER";

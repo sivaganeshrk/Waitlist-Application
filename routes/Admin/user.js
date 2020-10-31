@@ -26,6 +26,7 @@ router.post("/", admin, async (req, res) => {
   const { name, email, password } = req.body;
   const waitno = 99;
   const referralcode = crypto.randomBytes(6).toString("hex");
+  const couponcode = crypto.randomBytes(6).toString("hex");
   try {
     let user = await User.findOne({ email });
     const total_user = await User.find({}).select("-password");
@@ -37,6 +38,7 @@ router.post("/", admin, async (req, res) => {
       password,
       waitno,
       referralcode,
+      couponcode,
     });
 
     if (total_user.length != 0) {
