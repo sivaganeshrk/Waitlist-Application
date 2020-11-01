@@ -53,3 +53,11 @@ This sites is build using **MERN Stack**
 > cd ..
 
 > npm start
+
+### Routing
+
+Go to **/admin/login/** for admin login
+
+**Use Credentials**
+email: sivadoog0808@gmail.com
+password:sivaganeshrk

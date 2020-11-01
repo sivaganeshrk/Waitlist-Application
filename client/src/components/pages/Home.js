@@ -35,8 +35,7 @@ const Home = () => {
             <br /> <br />
             Referral Link:{" "}
             <b>
-              {user &&
-                `https://waitlistapplication.herokuapp.com/referral/${user.referralcode}`}
+              {user && `http://localhost:3000/referral/${user.referralcode}`}
             </b>
           </h5>
           <ul>
