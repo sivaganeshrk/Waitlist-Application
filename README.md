@@ -26,10 +26,11 @@ This sites is build using **MERN Stack**
 2. change working directory to client and Install the dependencies for the Client(reactjs)
    > cd ./client
 
-> npm i 3. Run both server and client using
-> cd ../
+   > npm i 3. Run both server and client using
+   
+   > cd ../
 
-> npm run dev
+   > npm run dev
 
 #### Production Version
 
