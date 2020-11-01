@@ -10,7 +10,7 @@ const crypto = require("crypto");
 router.get("/", admin, async (req, res) => {
   try {
     const users = await User.find({}).select("-password").sort({
-      waitno: 1,
+      waitno: -1,
     });
     res.json(users);
   } catch (err) {
