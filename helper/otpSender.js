@@ -2,6 +2,7 @@ const Otp = require("../models/Otp");
 const sendMail = require("./mailsender");
 const moment = require("moment");
 
+// Otp sender
 module.exports = async (name, id, email) => {
   const otp = Math.random().toString().slice(6, 10);
   const otpExpires = moment().add(5, "minute").format();

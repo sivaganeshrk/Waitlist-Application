@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("config");
-
+// Generate the jsonwebtoken
 module.exports = (req, res, user_id) => {
   try {
     const payload = {

@@ -4,6 +4,7 @@ import AdminauthContext from "../../context/adminauth/adminauthContext";
 import AlertContext from "../../context/alert/alertContext";
 import Alert from "../layout/Alerts";
 
+// Admin login page
 export const Login = (props) => {
   const alertContext = useContext(AlertContext);
   const adminauthContext = useContext(AdminauthContext);

@@ -2,6 +2,7 @@ const Otp = require("../models/Otp");
 const moment = require("moment");
 const bcrypt = require("bcryptjs");
 
+// Validate the otp and change password
 module.exports = async (id, otp, password) => {
   const otpValidation = {
     valid: false,

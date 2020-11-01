@@ -5,6 +5,7 @@ import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
 import Alert from "../layout/Alerts";
 
+// User Forgot password page
 const Forgotpassword = (props) => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);

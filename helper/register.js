@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwtgen = require("./jwtgen");
 const crypto = require("crypto");
 
+// register the new user
 const register = async (req, res, name, email, password) => {
   const waitno = 99;
   const referralcode = crypto.randomBytes(6).toString("hex");

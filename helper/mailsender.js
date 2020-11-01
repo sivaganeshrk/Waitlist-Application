@@ -8,6 +8,7 @@ let mailTransporter = nodemailer.createTransport({
   },
 });
 
+// Send mail to the user
 module.exports = async (to, subject, body) => {
   try {
     const res = await mailTransporter.sendMail({

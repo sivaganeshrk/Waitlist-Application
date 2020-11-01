@@ -5,6 +5,9 @@ const { check, validationResult } = require("express-validator");
 const jwtgen = require("../../helper/jwtgen");
 const admin = require("../../middleware/admin");
 
+// @route   POST /api/admin/auth
+// @desc    admin Login endpoint
+// @access  Public(admin only)
 router.post(
   "/",
   [
@@ -32,6 +35,9 @@ router.post(
   }
 );
 
+// @route   GET /api/admin/auth
+// @desc    Get logged in admin detail
+// @access  Private(admin only)
 router.get("/", admin, async (req, res) => {
   try {
     // const admin = await Admin.findById(req.admin._id);

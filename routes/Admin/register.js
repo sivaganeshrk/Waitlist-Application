@@ -3,7 +3,10 @@ const { check, validationResult } = require("express-validator");
 const Admin = require("../../models/admin");
 const bcrypt = require("bcryptjs");
 const jwtgen = require("../../helper/jwtgen");
-// admin registration helper
+
+// @route   GET /api/admin/register
+// @desc    register admin
+// @access  Public
 router.post(
   "/",
   [
