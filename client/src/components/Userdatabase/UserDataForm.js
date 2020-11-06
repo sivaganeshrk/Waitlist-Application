@@ -78,6 +78,10 @@ const UserDataForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (waitno < 1) {
+      M.toast({ html: "Invalid waitno", classes: "rounded red darken-2" });
+      return;
+    }
     if (current_user === null) {
       addUser(user);
     } else {
@@ -152,6 +156,7 @@ const UserDataForm = () => {
               value={couponcode}
               placeholder="Enter the coupon code"
               onChange={onChange}
+              disabled
             />
           )}
           {current_user !== null && (
@@ -159,8 +164,8 @@ const UserDataForm = () => {
               type="text"
               name="waitno"
               value={waitno}
+              onChange={onChange}
               placeholder="wait no"
-              disabled
             />
           )}
           <br />

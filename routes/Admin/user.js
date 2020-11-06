@@ -3,6 +3,7 @@ const User = require("../../models/user");
 const admin = require("../../middleware/admin");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
+const sendMail = require("../../helper/mailsender");
 
 // @route   GET /api/admin/user
 // @desc    Get all user data from the database
@@ -68,9 +69,24 @@ router.put("/:id", admin, async (req, res) => {
   if (referralcode) userFields.referralcode = referralcode;
   try {
     let user = await User.findById(req.params.id);
-
+    let to;
     if (!user) return res.status(404).json({ msg: "User not found" });
-
+    if (userFields.waitno == 1 && !user.mailflag) {
+      const subject = "Your Coupon Code";
+      userFields.mailflag = true;
+      const body = `<html>
+       <body>
+       <h4>Hai ${user.name}</h4>
+       <p>Your Coupon code is :<b>${user.couponcode}</b> </p>
+       </body>
+       <html>`;
+      if (email) {
+        to = email;
+      } else {
+        to = user.email;
+      }
+      sendMail(to, subject, body);
+    }
     user = await User.findByIdAndUpdate(
       req.params.id,
       {

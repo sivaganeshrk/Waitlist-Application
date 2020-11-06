@@ -65,7 +65,7 @@ export const Login = (props) => {
       <Alert />
       <div className="container">
         <h1 className="center">
-          Account <span className="text blue-text text-darken-2">Login</span>
+          Admin <span className="text blue-text text-darken-2">Login</span>
         </h1>
         <br />
         <form onSubmit={onSubmit}>
