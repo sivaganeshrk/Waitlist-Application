@@ -78,13 +78,13 @@ const UserDataForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (waitno < 1) {
-      M.toast({ html: "Invalid waitno", classes: "rounded red darken-2" });
-      return;
-    }
     if (current_user === null) {
       addUser(user);
     } else {
+      if (waitno < 1) {
+        M.toast({ html: "Invalid waitno", classes: "rounded red darken-2" });
+        return;
+      }
       updateUser(user);
     }
   };
