@@ -2,7 +2,6 @@
 
 ---
 
-[Live Site](https://waitlistapplication.herokuapp.com) Hosted using Heroku
 
 This sites is build using **MERN Stack**
 
@@ -59,6 +58,3 @@ This sites is build using **MERN Stack**
 
 Go to **/admin/login/** for admin login
 
-**Use Credentials**
-email: sivadoog0808@gmail.com
-password:sivaganeshrk
