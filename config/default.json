@@ -1,6 +1,6 @@
 {
-  "mongoURI":"mongodb+srv://siva:xw4243BKW2JwNl9o@waitlistapplication.gio69.mongodb.net/waitlistapplication?retryWrites=true&w=majority",
+  "mongoURI":"mongo_db_url_with_database",
   "jwtSecret":"DFFF*4$4H9cQjSsqSy8L",
-  "email": "noreply.somt@gmail.com",
-  "emailPassword": "sivaganeshrk"
+  "email": "your_email_address_here",
+  "emailPassword": "super_secret_password_here"
 }
